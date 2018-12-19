@@ -27,8 +27,10 @@ namespace BIG.Mobile.Services
             HttpContent content = new StringContent(json);
             content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
 
-            //var response = await client.PostAsync("http://localhost:52049/api/Account/Register", content);
-            var response = await client.PostAsync("http://webidentity2018.azurewebsites.net/api/Account/Register", content);
+            //var response = await client.PostAsync("http://local", content);
+            //Revisar sonexion en notepad
+            var response = await client.PostAsync("http://web.azurewebsites.net/api/Account/Register", content);
+            
             return response.IsSuccessStatusCode;
 
 
